@@ -7,6 +7,8 @@ const nextConfig = {
 
 const contentSecurityPolicy = {
     'default-src': [`'none'`],
+    'font-src': [`'self'`],
+    'style-src': [`'self'`],
 }
 
 function getHeaders() {
@@ -20,7 +22,6 @@ function getHeaders() {
             { key: 'Referrer-Policy', value: 'no-referrer'},
             { key: 'X-Frame-Options',value: 'DENY'},
             { key: 'X-XSS-Protection', value: '0'},
-  
           ],
         },
     ];
