@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async headers() {
-        return getHeaders()
-    }
+    // async headers() {
+    //     return getHeaders()
+    // }
 }
 
 const contentSecurityPolicy = {
