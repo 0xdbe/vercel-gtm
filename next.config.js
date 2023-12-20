@@ -7,9 +7,20 @@ const nextConfig = {
 
 const contentSecurityPolicy = {
     'default-src': [`'none'`],
+    'frame-ancestors': [`'none'`],
     'font-src': [`'self'`],
-    'img-src': [`'self'`],
-    'style-src': [`'self'`],
+    'form-action': [`'none'`],
+    'connect-src':  [
+        `'none'`,
+    ],
+    'img-src': [
+        `'self'`,
+    ],
+    'script-src': [
+        `'self'`,
+    ],
+    'style-src': [ `'self'` ]
+
 }
 
 function getHeaders() {
