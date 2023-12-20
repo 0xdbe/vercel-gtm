@@ -8,6 +8,7 @@ const nextConfig = {
 const contentSecurityPolicy = {
     'default-src': [`'none'`],
     'font-src': [`'self'`],
+    'img-src': [`'self'`],
     'style-src': [`'self'`],
 }
 
