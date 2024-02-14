@@ -79,6 +79,8 @@ function getContentSecurityPolicyHeaderValue(
       contentSecurityPolicyDirective['frame-src'].push('https://vercel.live')
       contentSecurityPolicyDirective['style-src'].push('https://vercel.live')
     }
+
+    contentSecurityPolicyDirective['connect-src'].push('sentry.io')
   
     return Object.entries(contentSecurityPolicyDirective)
       .map(([key, value]) => `${key} ${value.join(' ')}`)
