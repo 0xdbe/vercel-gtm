@@ -27,7 +27,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-MP9KXF85" />
+      <script src="https://www.googletagmanager.com/gtm.js?id=GTM-MP9KXF85" />
       <body className={inter.className}>{children}</body>
     </html>
   )
