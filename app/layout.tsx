@@ -5,7 +5,6 @@ import { headers } from 'next/headers'
 
 import { getScriptNonceFromHeader } from './helper/get-script-nonce-from-header'
 import Script from 'next/script'
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const dynamic = 'force-dynamic'
@@ -22,12 +21,16 @@ export default function RootLayout({
 }) {
 
   const contentSecurityPolicy: string | null = headers().get('Content-Security-Policy')
-  const nonce = contentSecurityPolicy ? getScriptNonceFromHeader(contentSecurityPolicy) : null
+  const nonce = contentSecurityPolicy ? getScriptNonceFromHeader(contentSecurityPolicy) : undefined
   console.log('nonce:', nonce)
 
   return (
     <html lang="en">
-      <script src="https://www.googletagmanager.com/gtm.js?id=GTM-MP9KXF85" />
+      <Script 
+        src="https://www.googletagmanager.com/gtm.js?id=GTM-MP9KXF85"
+        strategy="afterInteractive"
+        nonce={nonce}
+      />
       <body className={inter.className}>{children}</body>
     </html>
   )
