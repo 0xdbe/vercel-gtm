@@ -4,6 +4,7 @@ import './globals.css'
 import { headers } from 'next/headers'
 
 import { getScriptNonceFromHeader } from './helper/get-script-nonce-from-header'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-MP9KXF85" />
       <body className={inter.className}>{children}</body>
     </html>
   )
