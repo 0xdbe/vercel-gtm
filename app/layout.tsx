@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <Script 
         src="https://www.googletagmanager.com/gtm.js?id=GTM-MP9KXF85"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         nonce={nonce}
       />
       <body className={inter.className}>{children}</body>
