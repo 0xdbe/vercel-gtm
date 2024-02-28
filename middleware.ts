@@ -84,7 +84,7 @@ function getContentSecurityPolicyHeaderValue(
     contentSecurityPolicyDirective['connect-src'].push('sentry.io')
 
     // For Google Tag Manager
-    contentSecurityPolicyDirective['script-src'].push(`https://www.googletagmanager.com/gtm.js?id=GTM-MP9KXF85`)
+    contentSecurityPolicyDirective['script-src'].push(`https://www.googletagmanager.com`)
   
     return Object.entries(contentSecurityPolicyDirective)
       .map(([key, value]) => `${key} ${value.join(' ')}`)
