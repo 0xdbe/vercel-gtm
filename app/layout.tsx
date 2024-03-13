@@ -22,7 +22,6 @@ export default function RootLayout({
 
   const contentSecurityPolicy: string | null = headers().get('Content-Security-Policy')
   const nonce = contentSecurityPolicy ? getScriptNonceFromHeader(contentSecurityPolicy) : undefined
-  console.log('nonce:', nonce)
 
   return (
     <html lang="en">
