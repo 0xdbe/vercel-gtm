@@ -84,8 +84,11 @@ function getContentSecurityPolicyHeaderValue(
     contentSecurityPolicyDirective['connect-src'].push('sentry.io')
 
     // For Google Tag Manager (Debug and Preview Mode)
+    contentSecurityPolicyDirective['font-src'].push(`https://fonts.gstatic.com/`)
+    contentSecurityPolicyDirective['img-src'].push(`https://www.googletagmanager.com`)
+    contentSecurityPolicyDirective['img-src'].push(`https://fonts.gstatic.com`)
     contentSecurityPolicyDirective['style-src'].push(`https://www.googletagmanager.com`)
-    contentSecurityPolicyDirective['style-src'].push(`https://fonts.googleapis.com/css`)
+    contentSecurityPolicyDirective['style-src'].push(`https://fonts.googleapis.com`)
   
     return Object.entries(contentSecurityPolicyDirective)
       .map(([key, value]) => `${key} ${value.join(' ')}`)
