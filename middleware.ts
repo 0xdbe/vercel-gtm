@@ -83,8 +83,9 @@ function getContentSecurityPolicyHeaderValue(
     // For Sentry (CSP Report Violation)
     contentSecurityPolicyDirective['connect-src'].push('sentry.io')
 
-    // For Google Tag Manager
-    contentSecurityPolicyDirective['script-src'].push(`https://www.googletagmanager.com`)
+    // For Google Tag Manager (Debug and Preview Mode)
+    contentSecurityPolicyDirective['style-src'].push(`https://www.googletagmanager.com`)
+    contentSecurityPolicyDirective['style-src'].push(`https://fonts.googleapis.com/css`)
   
     return Object.entries(contentSecurityPolicyDirective)
       .map(([key, value]) => `${key} ${value.join(' ')}`)
