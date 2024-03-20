@@ -87,8 +87,10 @@ function getContentSecurityPolicyHeaderValue(
     contentSecurityPolicyDirective['font-src'].push(`https://fonts.gstatic.com/`)
     contentSecurityPolicyDirective['img-src'].push(`https://www.googletagmanager.com`)
     contentSecurityPolicyDirective['img-src'].push(`https://fonts.gstatic.com`)
+    contentSecurityPolicyDirective['img-src'].push(`data:`)
     contentSecurityPolicyDirective['style-src'].push(`https://www.googletagmanager.com`)
     contentSecurityPolicyDirective['style-src'].push(`https://fonts.googleapis.com`)
+    contentSecurityPolicyDirective['style-src'].push(`unsafe-inline`)
   
     return Object.entries(contentSecurityPolicyDirective)
       .map(([key, value]) => `${key} ${value.join(' ')}`)
