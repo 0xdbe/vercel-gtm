@@ -108,6 +108,9 @@ export default function Home() {
           </p>
         </a>
       </div>
+      <div id="gtm-container">
+        Data from GTM:
+      </div>
     </main>
   )
 }
